@@ -7,7 +7,7 @@ port = 8000;
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
-app.get("/", async (req, res) => {
+app.get("/:name", async (req, res) => {
   //   config = {
   //     params: {
   //       q: kolkata,
@@ -16,9 +16,10 @@ app.get("/", async (req, res) => {
   //     },
   //   };
   try {
-    let searchName = "kolkata";
+    const { name } = req.params;
+    //let searchName = "kolkata";
     dataN = await axios.get(
-      `https://api.openweathermap.org/data/2.5/weather?q=${searchName}&appid=eea90397c3ba6ef85198f1b574217416&units=metric`
+      `https://api.openweathermap.org/data/2.5/weather?q=${name}&appid=eea90397c3ba6ef85198f1b574217416&units=metric`
     );
     value = dataN.data;
     //console.log(dataN.data);
