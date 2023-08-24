@@ -9,6 +9,9 @@
   "author": "Sriju",
   "license": "ISC",
   "dependencies": {
+    "axios": "^1.4.0",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
     "requests": "^0.3.0"
   }
 }
